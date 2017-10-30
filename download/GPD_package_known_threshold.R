@@ -15,14 +15,15 @@ Fiducial.GPD.known.thresh<-function(X,a,beta,CI.level,g=NaN,s=NaN,sd.g=NaN,
 #burnin is number of the first MCMC iterations omitted from the chain.
 #J.numb is the number of subsamples that are taken from the Jacobian.
 			   	
-  X<-sort(X)	
+  X<-sort(X)
+
 
 
 #Intialize the default values for the tuning parameters of the MCMC chain.
   		   	
   mle.fit<-gpd.fit(X,a,show=FALSE)
   
-  
+  n<-sum(X>=a)
   if(g=="NaN")  g<-mle.fit$mle[2]
   if(s=="NaN")  s<-mle.fit$mle[1]
   
