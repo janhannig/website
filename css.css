@@ -4,7 +4,8 @@ body {
 }
 
 #obal {
-	width: 800px;
+	max-width: 800px;
+	width: 100%;
 	margin-top: 0px;
 	margin-right: auto;
 	margin-bottom: 0px;
@@ -17,6 +18,11 @@ body {
 	margin: 0px;
 }
 
+
+#hlavicka img {
+	max-width: 100%;
+	height: auto;
+}
 #levo1{
 	display: inline;
 	float: left;
@@ -202,20 +208,23 @@ h3 {
 	
 }
 #obsah a{
-	color: #5B8CBF;
+	color: #005A9C;
 	text-decoration: underline;
 	
 	
 }
+#obsah a:visited{
+	color: #4B2E83;
+}
 #obsah a:hover{
-	color: #666666;
+	color: #003366;
 	text-decoration: none;
 	
 }
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	color: #999999;
+	color: #1A1A1A;
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 10px;
@@ -244,6 +253,7 @@ h1 {
 #navigace a{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
+	line-height: 16px;
 	color: #FFFFFF;
 	text-decoration: none;
 	text-align: left;
@@ -252,9 +262,9 @@ h1 {
 	font-weight: normal;
 	float: left;
 	margin: 0px;
-	padding-top: 3px;
+	padding-top: 4px;
 	padding-right: 0px;
-	padding-bottom: 3px;
+	padding-bottom: 4px;
 	padding-left: 5px;
 	background-color: #000000;
 }
@@ -298,4 +308,59 @@ h1 {
 	margin-bottom: 0px;
 	margin-left: 15px;
 	
+}
+
+
+/* Keyboard focus visibility */
+a:focus,
+a:focus-visible {
+	outline: 3px solid #000000;
+	outline-offset: 2px;
+}
+#navigace a:focus,
+#navigace a:focus-visible {
+	outline: 3px solid #FFFFFF;
+	outline-offset: -3px;
+}
+
+
+/* Skip link */
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(-200%);
+	padding: 0.75rem 1rem;
+	background: #FFFFFF;
+	color: #000000;
+	z-index: 9999;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+	transform: translateY(0);
+}
+
+
+@media (max-width: 820px) {
+	/* Make layout reflow on narrow screens */
+	#obal {
+		width: 100%;
+	}
+	#navigace {
+		width: 100%;
+	}
+	#navigace a{
+		float: none;
+		width: auto;
+	}
+	#levo1, #levo2, #levo3, #pravo1, #pravo2 {
+		float: none;
+		width: auto;
+		display: block;
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+	#blok, #blok1, #blok2, #blok3, #blok4, #blok5 {
+		display: none;
+	}
 }
